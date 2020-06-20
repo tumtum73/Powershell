@@ -8,7 +8,7 @@ This script will uninstall chocolatey, I rarely do this.
 This script is used to install chocolatey and specific software I use allot.
 
 ### Create-VM.ps1
-This script will typically create a reosurce group, storage account, and unique VM.  Although you can pass existing resource group name, or storage account name.  It will also attmept to find oyur client public IP and add that to the Network Security Group as an IP white list.
+This script will typically create a resource group, storage account, and unique VM.  Although you can pass existing resource group name, or storage account name.  It will also attmept to determine your client public IP and add that to the Network Security Group as an IP white list.
 
 ### Setup-Server.ps1
 This script is used to configure serers the way I like them.  For example:
