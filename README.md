@@ -1,6 +1,11 @@
 # Powershell
 Collection of Powershell scripts for Stephen Correia
 
+### chocolatey-remove.ps1
+This script will uninstall chocolatey, I rarely do this.
+
+### chocolatey-setup.ps1
+This script is used to install chocolatey and specific software I use allot.
 
 ### Create-VM.ps1
 This script will typically create a reosurce group, storage account, and unique VM.  Although you can pass existing resource group name, or storage account name.  It will also attmept to find oyur client public IP and add that to the Network Security Group as an IP white list.
