@@ -50,6 +50,7 @@ choco install wireshark -y         #Wireshark
 choco install visualstudiocode -y  #VSCode
 #choco install awscli -y            #AWS CLI
 choco install ssms -y              #SQL Server Management Studio
+choco install microsoft-edge -y    #Microsoft Edge (Chromium)
 
 Write-Host "If you have made it here without errors, you should be setup and ready to hack on the apps."
 Write-Warning "If you see any failures happen, you may want to reboot and continue to let installers catch up. This script is idempotent and will only apply changes that have not yet been applied."
