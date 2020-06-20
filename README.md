@@ -22,3 +22,6 @@ This script is used to configure serers the way I like them.  For example:
     - Install sysinternals tools
     - Install Visual Studio Code
     - Install wireshark
+
+### template.ps1
+Powershell template for starting scripts from scratch.
