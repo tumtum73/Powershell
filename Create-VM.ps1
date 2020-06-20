@@ -11,7 +11,10 @@ param(
   [Parameter(Mandatory=$true)]
   [string]$VMName,
   [Parameter(Mandatory=$false)]
-  [string]$VMLocalAdminUser = "LocalAdminUser"
+  [string]$VMLocalAdminUser = "LocalAdminUser",
+  [Parameter(Mandatory=$false)]
+  [ValidateSet("Standard_A8_v2", "Standard_D4_v3")]
+  [string]$VMSize = "Standard_A8_v2"
 )
 
 if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
@@ -61,6 +64,7 @@ New-AzVm `
     -SubnetName "mySubnet" `
     -SecurityGroupName "myNetworkSecurityGroup" `
     -PublicIpAddressName "myPublicIpAddress" `
+    -Size $VMSize `
     -Credential $VMCred
 
 #Reference:  http://woshub.com/get-external-ip-powershell/
