@@ -54,6 +54,7 @@ Set-ItemProperty $key TaskbarGlomLevel 2
 
 #Install Chocolatey
 #Reference:  
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Write-Output  "INFO: Installing Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
