@@ -1,3 +1,4 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $scriptDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
 function Install-NeededFor {
