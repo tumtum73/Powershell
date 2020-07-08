@@ -21,6 +21,7 @@ This script is used to configure serers the way I like them.  For example:
     - Disabling hiding extensions for known files
     - Disabling showing hidden operation system files
     - Enabling never group taskbar items option"
+- Disable Internet Explorer
 - Install chocolatey (my favorite management software)
     - Install Notepad++
     - Install 7zip
