@@ -51,6 +51,9 @@ Set-ItemProperty $key ShowSuperHidden 0
 Write-Output "INFO:  Enabling never group taskbar items option"
 Set-ItemProperty $key TaskbarGlomLevel 2
 
+#Disable Internet Explorer 
+#Reference:  https://support.microsoft.com/en-us/help/4013567/how-to-disable-internet-explorer-on-windows
+dism /online /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
 
 #Install Chocolatey
 #Reference:  
@@ -58,11 +61,12 @@ Set-ItemProperty $key TaskbarGlomLevel 2
 Write-Output  "INFO: Installing Chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-choco install notepadplusplus.install -y
-choco install 7zip.install -y
-choco install sysinternals -y
-choco install visualstudiocode -y
-choco install wireshark -y
+choco install notepadplusplus.install -y    #Notepad++
+choco install 7zip.install -y               #7zip 
+choco install sysinternals -y               #sysinternals tools
+choco install visualstudiocode -y           #VSCode
+choco install wireshark -y                  #Wireshark
+choco install microsoft-edge -y             #Microsoft Edge (Chromium)
 
 #Import Powershell PSreadLine Module to enable command history
 #Reference:  http://woshub.com/powershell-commands-history/
