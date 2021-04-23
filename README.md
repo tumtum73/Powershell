@@ -7,6 +7,9 @@ This script will uninstall chocolatey, I rarely do this.
 ### chocolatey-setup.ps1
 This script is used to install chocolatey and specific software I use allot.
 
+### guess.ps1
+This script is a fork from Mike Robbins that gets a random number and gives you 7 tries to guess the number.
+
 ### Create-VM.ps1
 This script will typically create a resource group, storage account, and unique VM.  Although you can pass existing resource group name, or storage account name.  It will also attmept to determine your client public IP and add that to the Network Security Group as an IP white list.
 
