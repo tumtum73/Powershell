@@ -105,41 +105,6 @@ Write-Host -ForegroundColor Yellow "INFO:  Add F: drive mapping to installs driv
 Write-Host -ForegroundColor Yellow "INFO:  Stopping SnagIt processes";
 Get-Process snagit* | stop-process -force
 
-	#Open Command Prompt as Z2 user
-#Write-Host -ForegroundColor Yellow "INFO: Open Admin command prompt for Z2 credentials";
-	#Commented out on 1/27/16 because Z2 password expired, need to submit 3912 to reinstate...
-#	$erroractionpreference = "SilentlyContinue"
-#	$strQuit = $Null
-#	do {
-#	    runas /user:$z2user "cmd /k color b && title %username%"
-#     #$?;
-#     if ($LASTEXITCODE -ne 0) {
-#		 	$strQuit = Read-Host "Do you want to try again?"
-#		 		if ($strQuit -ne $Null -Or $strQuit -ne "N") {
-#		 			Write-Host -ForegroundColor Yellow "INFO: Stopping attempt to login with Z2 credentials";
-#		 		}
-#		 }	 	
-#	}
-#	until ($strQuit -ne $Null -Or $strQuit -ne "N")
-	
-
-#Open Command Prompt as ZZ user
-#Write-Host -ForegroundColor Yellow "INFO:  Open Command Prompt as ZZ user"
-#	do {
-#		$Smartcard = Read-Host -Prompt 'Do you want to Starting Command Prompt with Smartcard'
-#		Switch ($Smartcard) { 
-#		Y {Write-Host -ForegroundColor Yellow "INFO:  Starting Command Prompt with Smartcard"; runas /smartcard "cmd /k color c && title $zzuser"} 
-#		N {Write-Host -ForegroundColor Yellow "INFO:  Skipping Command Prompt"} 
-#		Default {Write-Host "Unkown Value, try again."; $Smartcard = $null} 
-#		}
-#	}
-#	while ($Smartcard -eq $null)
- 
-
-#Testing a Morning Report Script
-#Get-Content  c:\scripts\mr\computers.txt | c:\scripts\mr\mr.ps1 -HTML | Out-File c:\scripts\mr\mr2.html;
-#$ie.Navigate2("c:\scripts\mr\mr2.html", $navOpenInBackgroundTab);
-
 #Checking for Password Expiration
 Write-Host -ForegroundColor Yellow "INFO:  Checking for Password Expiration"
 	$users = get-aduser -filter {(Name -eq $user) -or (Name -eq $z2user)} -properties Name
@@ -199,48 +164,8 @@ $Running = $null
 #Starting Microsoft Edge (Chromium)
 $edge = get-process -Name "msedge" -ErrorAction SilentlyContinue
 if ($edge -eq $null) {
-	 start msedge "https://myapps.microsoft.com/cloud.hii-nns.com", "https://account.activedirectory.windowsazure.us", "https://dev.azure.com/NIMACVS01/NIMACT54OPS/_queries"
+	 start msedge "https://myapps.microsoft.com/", "https://account.activedirectory.windowsazure.us", "https://dev.azure.com/"
 } 
 else {
 	Write-Output "Edge already running"
-}
-
-#Write-Host -ForegroundColor Yellow "INFO: Comparing TFS Groups for Sharepoint CAL licensing";
-#c:\scripts\Compare-TFSGroups.ps1
-	
-#Write-Host -ForegroundColor Yellow "INFO: Starting Job to monitor AppAdmin Web Service";
-#Start-Job -FilePath c:\scripts\Get-IISHealthCheck.ps1
-
-#Validate Visual Studio (formerly MSDN) subscriptions
-# do {
-# 	$Validate = Read-Host -Prompt 'Do you want to execute script to Validate Visual Studio Subscriptions'
-# 	Switch ($Validate) 
-#      { 
-#        Y {Write-Host -ForegroundColor Yellow "INFO:  Starting Script to Validate Visual Studio Subscriptions";c:\correia\work\validate-vs.ps1} 
-#        N {Write-Host -ForegroundColor Yellow "INFO:  Skipping Visual Studio Validation"} 
-#        Default {Write-Host "Unkown Value, try again."; $Validate = $null} 
-#      } 
-# }
-# while ($Validate -eq $null)
-
-
-	
-	
-#***Functions***
-
-function Get-SecurePassword($UserName) {
-	$cred = Get-Credential $UserName
-	$plainTextPassword = $cred.GetNetworkCredential().Password;
-	$domain = $cred.GetNetworkCredential().Domain;
-	$user =  $cred.GetNetworkCredential().UserName;
-
-	while (!(test-adcredentials $user $plainTextPassword))  {
-		Write-Host -ForegroundColor Red "Password incorrect for $UserName.  Please try again." 
-		$cred = Get-Credential $UserName
-		$plainTextPassword = $cred.GetNetworkCredential().Password;
-		$domain = $cred.GetNetworkCredential().Domain;
-		$user =  $cred.GetNetworkCredential().UserName;
-	}
-
-	Return (ConvertTo-SecureString  $plainTextPassword  -AsPlainText -force);
 }
