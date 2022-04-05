@@ -17,6 +17,9 @@ This script will typically create a resource group, storage account, and unique 
 This script is what I came up with while working through the Learn Powershell Toolmaking in a Month
 of Lunches book.
 
+### profile.ps1
+This script is what I put in my profile to customize it a bit to me.  It adds a comment stating how many days until Christmas and My Birthday.
+
 ### Setup-Server.ps1
 This script is used to configure serers the way I like them.  For example:
 - Set Timezone to EST
@@ -37,7 +40,7 @@ This script is used to configure serers the way I like them.  For example:
     - Install wireshark
     - Install Edge (Chromium)
 
-### statup.ps1
+### startup.ps1
 This script is used ot stratup my windows environmenent in the morning.  For example:
 - Starts Outlook witrh the appropriate settings depending on if I have a two moinotr setup or not.
 - Starts Jabber
