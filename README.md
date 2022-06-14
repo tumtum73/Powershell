@@ -13,6 +13,9 @@ This script is a fork from Mike Robbins that gets a random number and gives you 
 ### Create-VM.ps1
 This script will typically create a resource group, storage account, and unique VM.  Although you can pass existing resource group name, or storage account name.  It will also attmept to determine your client public IP and add that to the Network Security Group as an IP white list.
 
+### Get-CertDetails.ps1
+This script queries an SSL secured web site for certificate details and reports expiration date.
+
 ### Get-SystemInfo.ps1
 This script is what I came up with while working through the Learn Powershell Toolmaking in a Month
 of Lunches book.
