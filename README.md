@@ -44,12 +44,12 @@ This script is used to configure serers the way I like them.  For example:
     - Install Edge (Chromium)
 
 ### startup.ps1
-This script is used ot stratup my windows environmenent in the morning.  For example:
-- Starts Outlook witrh the appropriate settings depending on if I have a two moinotr setup or not.
+This script is used to startup my windows environmenent in the morning.  For example:
+- Starts Outlook witrh the appropriate settings depending on if I have a two monitor setup or not.
 - Starts Jabber
 - Sets up common file share
 - Shutdown SnagIt
-- Check for passwrod expiration and email notification
+- Check for password expiration and email notification
 - Start Google Chrome with commonly used tabs
 - Start Microsoft Edge with commonly used tabs
 
