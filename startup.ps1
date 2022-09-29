@@ -148,7 +148,7 @@ Write-Host -ForegroundColor Yellow "INFO:  Starting Google Chrome";
 $Prog = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 $Running = Get-Process Chrome -ErrorAction SilentlyContinue
 if($Running -eq $null){
-	Start-Process -FilePath $Prog -ArgumentList "file:///C:/Correia/links.html", "https://mynns/teams/T54/IECS/SitePages/Home.aspx", "https://sm/", "https://portal.azure.com", "https://portal.azure.us", "http://tfs/InformationTechnology/T54-Cloud%20Admin/_backlogs?level=Backlog%20items&showParents=false&_a=backlog", "https://dev.azure.com/NIMACVS01", "https://hii-nns.percipio.com/", "https://tools.bluesteel.cloud/jira/secure/RapidBoard.jspa?rapidView=11&projectKey=UHPC&view=planning.nodetail&selectedIssue=UHPC-11","https://newsblur.com/", "https://www.gartner.com/library", "http://docs.cloud.hii-nns.com"
+	Start-Process -FilePath $Prog -ArgumentList "file:///C:/Correia/links.html", "https://newsblur.com/", "https://www.gartner.com/library"
 	Write-Host -ForegroundColor Yellow "INFO:  Google Chrome started."
 }
 else {
@@ -158,7 +158,6 @@ $Running = $null
 
 #Starting Microsoft Edge (Legacy)
 #Write-Host -ForegroundColor Yellow "INFO:  Starting Microsoft Edge";
-#start microsoft-edge:https://myapps.microsoft.com/cloud.hii-nns.com
 #start microsoft-edge:https://account.activedirectory.windowsazure.us
 
 #Starting Microsoft Edge (Chromium)
