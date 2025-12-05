@@ -48,7 +48,7 @@ choco install sysinternals -y      #Sysinternals Suite
 #choco install gimp -y             #GIMP Image Editor 
 choco install google-chrome-x64 -y #Google Chrome
 choco install wireshark -y         #Wireshark
-choco install visualstudiocode -y  #VSCode
+choco install vscode -y  #VSCode
 #choco install awscli -y            #AWS CLI
 choco install ssms -y              #SQL Server Management Studio
 choco install microsoft-edge -y    #Microsoft Edge (Chromium)
